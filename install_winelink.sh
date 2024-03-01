@@ -1240,7 +1240,7 @@ function run_installvarAC()  # Download/extract/install varAC chat app
     mkdir downloads 2>/dev/null; cd downloads
         # Download varAC linux working version 6.1 (static Link as no dynamic link known at the moment)
             echo -e "\n${GREENTXT}Downloading and installing VarAC . . .${NORMTXT}\n"
-            wget -q https://varac.hopp.bio/varac_latest || { echo "VarAC download failed!" && run_giveup; }
+            wget -q https://uc8a95782ac01fd4a987e92f8af1.dl.dropboxusercontent.com/cd/0/get/COPbDXwLv-fOBj6MPu0KrLs2b-QzyLuIjghebAN5m2nNfR5YMxVvTjObI9UZlefjp0TTVW2V9o7vU8OILh_84oMGjsK1k_PIdW6hMOFYWf3eYGGmiXvMZ4uYNfaQEtGSfk-PJcHCFjVGSkKzMDT3b9_M/file?dl=1# || { echo "VarAC download failed!" && run_giveup; }
             
         # Extract/install VarAC
             mkdir -p ${HOME}/.wine/drive_c/VarAC
@@ -1419,7 +1419,7 @@ function run_makevaraupdatescript()
 			# Download / extract / silently install VARA HF
 				# Search the rosmodem website for a VARA HF mega.nz link of any version, then download it
 					echo -e "\n${GREENTXT}Downloading VARA HF . . .${NORMTXT}\n"
-					VARAHFLINK=$(curl -s https://rosmodem.wordpress.com/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA HF v)')
+					VARAHFLINK=$(curl -s https://downloads.winlink.org/VARA%20Products/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA HF v)')
 					megadl ${VARAHFLINK} --path=${VARAUPDATE} || { echo "VARA HF download failed!" && run_giveup; }
 					7z x ${VARAUPDATE}/VARA\ HF*.zip -o"${VARAUPDATE}/VARAHFInstaller" -y -bsp0 -bso0
 					mv ${VARAUPDATE}/VARAHFInstaller/VARA\ setup*.exe ~/.wine/drive_c/ # move VARA installer into wineprefix (so AHK can find it)
@@ -1458,7 +1458,7 @@ function run_makevaraupdatescript()
 			# Download / extract / silently install VARA FM
 				# Search the rosmodem website for a VARA FM mega.nz link of any version, then download it
 					echo -e "\n${GREENTXT}Downloading VARA FM . . .${NORMTXT}\n"
-					VARAFMLINK=$(curl -s https://rosmodem.wordpress.com/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA FM v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
+					VARAFMLINK=$(curl -s https://downloads.winlink.org/VARA%20Products/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA FM v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
 					megadl ${VARAFMLINK} --path=${VARAUPDATE} || { echo "VARA FM download failed!" && run_giveup; }
 					7z x ${VARAUPDATE}/VARA\ FM*.zip -o"${VARAUPDATE}/VARAFMInstaller" -y -bsp0 -bso0
 					mv ${VARAUPDATE}/VARAFMInstaller/VARA\ FM\ setup*.exe ~/.wine/drive_c/ # move VARA installer here (so AHK can find it later)
@@ -1497,7 +1497,7 @@ function run_makevaraupdatescript()
 		#	# Download / extract / silently install VARA SAT
 		#		# Search the rosmodem website for a VARA SAT mega.nz link of any version, then download it
 		#			echo -e "\n${GREENTXT}Downloading VARA SAT . . .${NORMTXT}\n"
-		#			VARAFMLINK=$(curl -s https://rosmodem.wordpress.com/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA SAT v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
+		#			VARAFMLINK=$(curl -s https://downloads.winlink.org/VARA%20Products/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA SAT v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
 		#			megadl ${VARAFMLINK} --path=${VARAUPDATE} || { echo "VARA SAT download failed!" && run_giveup; }
 		#			7z x ${VARAUPDATE}/VARA\ SAT*.zip -o"${VARAUPDATE}/VARASATInstaller" -y -bsp0 -bso0
 		#			mv ${VARAUPDATE}/VARASATInstaller/VARA\ SAT\ setup*.exe ~/.wine/drive_c/ # move VARA installer here (so AHK can find it later)
@@ -1536,7 +1536,7 @@ function run_makevaraupdatescript()
 			# Download / extract / silently install VARA Chat
 				# Search the rosmodem website for a VARA Chat mega.nz link of any version, then download it
 					echo -e "\n${GREENTXT}Downloading VARA Chat . . .${NORMTXT}\n"
-					VARACHATLINK=$(curl -s https://rosmodem.wordpress.com/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA Chat v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
+					VARACHATLINK=$(curl -s https://downloads.winlink.org/VARA%20Products/ | grep -oP '(?=https://mega.nz).*?(?=" target="_blank" rel="noopener noreferrer">VARA Chat v)') # Find the mega.nz link from the rosmodem website no matter its version, then store it as a variable
 					megadl ${VARACHATLINK} --path=${VARAUPDATE} || { echo "VARA Chat download failed!" && run_giveup; }
 					7z x ${VARAUPDATE}/VARA\ Chat*.zip -o"${VARAUPDATE}/VARAChatInstaller" -y -bsp0 -bso0
 
